@@ -1,3 +1,10 @@
+$borderColor: rgb(255, 255, 255, .5)
+$colorWhite: #fff
+
+@keyframes
+    animation-duration: 1s
+    animation-iteration-count: 1
+    animation-name: inicio
 *
     padding: 0
     margin: 0
@@ -9,20 +16,21 @@ body,html
     div
         display: block
     .bg
-        filter: blur(2px)
+        filter: blur(3px)
         background-image: url('background.14d0f4518dd3581f.jpg')
         background-size: cover
         background-repeat: no-repeat
         background-attachment: fixed
         height: 100%
-        
+
     .contenedor
         display: flex
         flex-wrap: wrap
 
         .login
+            background: rgba(0, 0, 0, 0.2)
             width: 300px
-            border: 5px solid #fff
+            border: 5px solid $colorWhite
             position: absolute
             top: 50%
             left: 50%
@@ -33,24 +41,61 @@ body,html
                 padding: 10px
             .top
                 background: #15535a
+                height: 200px
                 display: flex
-                justify-content: center
+                flex-direction: column
+                align-items: center
                 overflow: visible
                 position: relative
+                padding-top: 20px
+                padding-bottom: 10%
                 .imagen
                     img
                         width: 80%
+                .monito-usuario
+                    border-radius: 100%
+                    height: 80px
+                    width: 80px
+                    background: $colorWhite
+                    position: absolute
+                    top: 150px
             .bottom
-                padding-top: 20px
-                padding-bottom: 5px
-            /*a
-                display: inline-block
-                margin: 10px
-                border: solid #fff
-                padding: 10px
-                text-decoration: none
-                color: #fff
-            
+                display: flex
+                flex-direction: column
+                align-items: center
+                padding-top: 10%
+                padding-bottom: 30px
+                color: $colorWhite
+
+                #nombre,#password
+                    background: rgba(255, 255, 255, .1)
+                    border: none
+                    border-radius: 3px
+                    font-size: 20px
+                    padding: 20px
+                    width: 80%
+                    border-bottom: solid
+                    border-bottom-color: $borderColor
+                    &::placeholder
+                        color: $borderColor
+                button
+                    background: #05429e
+                    color: $colorWhite
+                    border: none
+                    border-radius: 3px
+                    padding: 10px
+                    font-size: 15px
+                a
+
+                    color: $colorWhite
+
+        .language
+            position: absolute
+            margin: 20px
+            top: 0%
+            right: 0%
+            color: $colorWhite
+            font-size: 15px
         .powered
             width: 200px
             display: flex
@@ -60,9 +105,8 @@ body,html
             bottom: 0%
             border-radius: 5px
             margin: 20px
-            color: #fff
+            color: $colorWhite
             background: rgb(255,255,255,.1)
-            animation: inInput .5s
             img, p
                 padding: 5px
             img

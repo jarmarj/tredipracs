@@ -1,3 +1,8 @@
+@keyframes {
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-name: inicio;
+}
 * {
   padding: 0;
   margin: 0;
@@ -12,7 +17,7 @@ body div, html div {
   display: block;
 }
 body .bg, html .bg {
-  filter: blur(2px);
+  filter: blur(3px);
   background-image: url("background.14d0f4518dd3581f.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -24,6 +29,7 @@ body .contenedor, html .contenedor {
   flex-wrap: wrap;
 }
 body .contenedor .login, html .contenedor .login {
+  background: rgba(0, 0, 0, 0.2);
   width: 300px;
   border: 5px solid #fff;
   position: absolute;
@@ -32,30 +38,71 @@ body .contenedor .login, html .contenedor .login {
   margin: 20px;
   text-align: center;
   transform: translate(-50%, -50%);
-  /*a
-  *  display: inline-block
-  *  margin: 10px
-  *  border: solid #fff
-  *  padding: 10px
-  *  text-decoration: none
-  *  color: #fff */
 }
 body .contenedor .login div, html .contenedor .login div {
   padding: 10px;
 }
 body .contenedor .login .top, html .contenedor .login .top {
   background: #15535a;
+  height: 200px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   overflow: visible;
   position: relative;
+  padding-top: 20px;
+  padding-bottom: 10%;
 }
 body .contenedor .login .top .imagen img, html .contenedor .login .top .imagen img {
   width: 80%;
 }
+body .contenedor .login .top .monito-usuario, html .contenedor .login .top .monito-usuario {
+  border-radius: 100%;
+  height: 80px;
+  width: 80px;
+  background: #fff;
+  position: absolute;
+  top: 150px;
+}
 body .contenedor .login .bottom, html .contenedor .login .bottom {
-  padding-top: 20px;
-  padding-bottom: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10%;
+  padding-bottom: 30px;
+  color: #fff;
+}
+body .contenedor .login .bottom #nombre, body .contenedor .login .bottom #password, html .contenedor .login .bottom #nombre, html .contenedor .login .bottom #password {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 3px;
+  font-size: 20px;
+  padding: 20px;
+  width: 80%;
+  border-bottom: solid;
+  border-bottom-color: rgba(255, 255, 255, 0.5);
+}
+body .contenedor .login .bottom #nombre::placeholder, body .contenedor .login .bottom #password::placeholder, html .contenedor .login .bottom #nombre::placeholder, html .contenedor .login .bottom #password::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+body .contenedor .login .bottom button, html .contenedor .login .bottom button {
+  background: #05429e;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  padding: 10px;
+  font-size: 15px;
+}
+body .contenedor .login .bottom a, html .contenedor .login .bottom a {
+  color: #fff;
+}
+body .contenedor .language, html .contenedor .language {
+  position: absolute;
+  margin: 20px;
+  top: 0%;
+  right: 0%;
+  color: #fff;
+  font-size: 15px;
 }
 body .contenedor .powered, html .contenedor .powered {
   width: 200px;
@@ -68,7 +115,6 @@ body .contenedor .powered, html .contenedor .powered {
   margin: 20px;
   color: #fff;
   background: rgba(255, 255, 255, 0.1);
-  animation: inInput 0.5s;
 }
 body .contenedor .powered img, body .contenedor .powered p, html .contenedor .powered img, html .contenedor .powered p {
   padding: 5px;
