@@ -1,0 +1,80 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: "Quicksand", sans-serif;
+}
+body div, html div {
+  display: block;
+}
+body .bg, html .bg {
+  filter: blur(2px);
+  background-image: url("background.14d0f4518dd3581f.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100%;
+}
+body .contenedor, html .contenedor {
+  display: flex;
+  flex-wrap: wrap;
+}
+body .contenedor .login, html .contenedor .login {
+  width: 300px;
+  border: 5px solid #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: 20px;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  /*a
+  *  display: inline-block
+  *  margin: 10px
+  *  border: solid #fff
+  *  padding: 10px
+  *  text-decoration: none
+  *  color: #fff */
+}
+body .contenedor .login div, html .contenedor .login div {
+  padding: 10px;
+}
+body .contenedor .login .top, html .contenedor .login .top {
+  background: #15535a;
+  display: flex;
+  justify-content: center;
+  overflow: visible;
+  position: relative;
+}
+body .contenedor .login .top .imagen img, html .contenedor .login .top .imagen img {
+  width: 80%;
+}
+body .contenedor .login .bottom, html .contenedor .login .bottom {
+  padding-top: 20px;
+  padding-bottom: 5px;
+}
+body .contenedor .powered, html .contenedor .powered {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  bottom: 0%;
+  border-radius: 5px;
+  margin: 20px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  animation: inInput 0.5s;
+}
+body .contenedor .powered img, body .contenedor .powered p, html .contenedor .powered img, html .contenedor .powered p {
+  padding: 5px;
+}
+body .contenedor .powered img, html .contenedor .powered img {
+  width: 80%;
+}
+
+/*# sourceMappingURL=style.css.map */
