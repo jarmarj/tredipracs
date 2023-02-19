@@ -1,10 +1,6 @@
 $borderColor: rgb(255, 255, 255, .5)
 $colorWhite: #fff
 
-@keyframes
-    animation-duration: 1s
-    animation-iteration-count: 1
-    animation-name: inicio
 *
     padding: 0
     margin: 0
@@ -13,17 +9,25 @@ $colorWhite: #fff
 body,html
     height: 100%
     font-family: 'Quicksand', sans-serif
+    background-image: url('background.14d0f4518dd3581f.jpg')
+    background-size: cover
+    background-repeat: no-repeat
+    background-attachment: fixed
+    overflow: hidden
     div
         display: block
     .bg
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
         filter: blur(3px)
-        background-image: url('background.14d0f4518dd3581f.jpg')
-        background-size: cover
-        background-repeat: no-repeat
-        background-attachment: fixed
-        height: 100%
+        
+        //height: 100%
 
     .contenedor
+        backdrop-filter: blur(3px)
+        height: 100%
         display: flex
         flex-wrap: wrap
 
@@ -102,9 +106,9 @@ body,html
             flex-direction: column
             align-items: center
             position: absolute
-            bottom: 0%
+            bottom: 30px
+            left: 20px
             border-radius: 5px
-            margin: 20px
             color: $colorWhite
             background: rgb(255,255,255,.1)
             img, p
