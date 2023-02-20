@@ -48,6 +48,8 @@ body .contenedor .logo img,
 html .contenedor .logo img {
   border-radius: 10px;
   width: 80%;
+  transform-origin: center center;
+  animation: inLogo 1s;
 }
 body .contenedor .menu,
 html .contenedor .menu {
@@ -78,6 +80,8 @@ html .contenedor .menu .right .apartado {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  animation: inCards;
+  animation-duration: 1.5s;
 }
 body .contenedor .menu .left .apartado svg,
 body .contenedor .menu .right .apartado svg,
@@ -194,6 +198,29 @@ html .top-rigth .user svg:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+}
+
+@keyframes inCards {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  50% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+@keyframes inLogo {
+  0% {
+    transform: rotateX(90deg);
+  }
+  100% {
+    transform: rotateX(0deg);
   }
 }
 
