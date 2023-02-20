@@ -1,16 +1,11 @@
-let seconds = 0;
-let minutes = 0;
-let hours = 0;
+let seconds = 60;
+let minutes = 29;
 let timetext = "";
 function showTime() {
-  seconds++;
-  if (seconds > 60) {
-    minutes++;
-    seconds = 0;
-  }
-  if (minutes > 60) {
-    hours++;
-    minutes = 0;
+  seconds--;
+  if (seconds < 0) {
+    minutes--;
+    seconds = 59
   }
 
   if (minutes < 10) {
