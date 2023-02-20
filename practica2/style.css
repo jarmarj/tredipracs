@@ -1,0 +1,119 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  background: linear-gradient(#0082ff, 85%, #fff);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
+  color: #fff;
+  overflow: hidden;
+}
+body .contenedor, html .contenedor {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+body .contenedor .logo, body .contenedor .menu, html .contenedor .logo, html .contenedor .menu {
+  margin: 20px;
+  width: 40%;
+  height: 50%;
+  display: flex;
+}
+body .contenedor .logo, html .contenedor .logo {
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+body .contenedor .logo img, html .contenedor .logo img {
+  border-radius: 10px;
+  width: 80%;
+}
+body .contenedor .menu, html .contenedor .menu {
+  flex-direction: row;
+  justify-content: space-between;
+}
+body .contenedor .menu .left, body .contenedor .menu .right, html .contenedor .menu .left, html .contenedor .menu .right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  width: 40%;
+}
+body .contenedor .menu .left .apartado, body .contenedor .menu .right .apartado, html .contenedor .menu .left .apartado, html .contenedor .menu .right .apartado {
+  box-shadow: 0px 1px 10px -2px #000;
+  height: 150px;
+  width: 180px;
+  background: #fff;
+  margin: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+body .contenedor .menu .left .apartado svg, body .contenedor .menu .right .apartado svg, html .contenedor .menu .left .apartado svg, html .contenedor .menu .right .apartado svg {
+  height: 60%;
+  width: auto;
+  fill: #0082ff;
+  margin-bottom: 10px;
+}
+body .contenedor .menu .left .apartado svg:hover, body .contenedor .menu .right .apartado svg:hover, html .contenedor .menu .left .apartado svg:hover, html .contenedor .menu .right .apartado svg:hover {
+  filter: drop-shadow(3px 5px 2px rgba(0, 0, 0, 0.4));
+}
+body .contenedor .cabeza-apartado, html .contenedor .cabeza-apartado {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background: rgb(0, 160, 255);
+  text-align: center;
+  padding: 10px;
+  width: 100%;
+  height: 30%;
+  font-size: 16px;
+}
+body .top-rigth, html .top-rigth {
+  height: 40px;
+  width: 225px;
+  margin-right: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+body .top-rigth .time, html .top-rigth .time {
+  text-align: center;
+  width: 30%;
+}
+body .top-rigth .user, html .top-rigth .user {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: rgb(0, 160, 255);
+  border-radius: 5px;
+  text-align: center;
+  width: 70%;
+  height: 40px;
+}
+body .top-rigth .user p, html .top-rigth .user p {
+  width: 66%;
+  font-size: 16px;
+}
+body .top-rigth .user svg, html .top-rigth .user svg {
+  fill: rgb(255, 217, 0);
+  height: 80%;
+}
+body .top-rigth .user svg:hover, html .top-rigth .user svg:hover {
+  filter: drop-shadow(0px 0px 5px rgb(255, 217, 0));
+}
+
+/*# sourceMappingURL=style.css.map */
