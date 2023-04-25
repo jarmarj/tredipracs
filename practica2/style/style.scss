@@ -2,7 +2,8 @@
 
 $colorWhite: #fff;
 $bgColor: #0082ff;
-$alterColor: rgb(0, 160, 255);
+$alterColor: lighten($bgColor, 10);
+//contraparte seria darken()
 
 * {
   padding: 0;

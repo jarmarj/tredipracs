@@ -1,0 +1,86 @@
+@import "../shared/themes.scss";
+
+mat-error {
+  font-size: 15px;
+  color: $error;
+}
+mat-form-field {
+  width: 100%;
+  height: 100px;
+  input {
+    height: 60px;
+  }
+}
+.body {
+  background: linear-gradient(to right top, $blueBg 30%, $purpleBg 65%);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  .container {
+    border: solid 10px;
+    border-radius: 15px;
+    height: 700px;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+
+    .main {
+      border-radius: 5px;
+      background: $colorWhite;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .logo {
+        background: linear-gradient(to right, $purpleBgDarken 25%, $blueBg);
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+        padding: 10px;
+        height: 25%;
+      }
+      .loginForm {
+        border-radius: inherit;
+        display: flex;
+        height: 70%;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+
+        .email,
+        .password,
+        .submit {
+          display: flex;
+          padding: 10px;
+          margin: 20px;
+          justify-content: center;
+        }
+        .email,.password{
+          height: 150px;
+        }
+
+        .error_msg {
+          text-align: center;
+          color: $error;
+          font-size: 30px;
+        }
+        .submit {
+          .subButton {
+            background: linear-gradient(to left, $purpleBg 50%, $blueBg);
+            color: $colorWhite;
+            width: 100%;
+            height: 50px;
+            border-style: none;
+            border-radius: 10px;
+          }
+        }
+      }
+    }
+  }
+}

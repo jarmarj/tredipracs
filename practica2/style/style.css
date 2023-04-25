@@ -104,7 +104,7 @@ html .contenedor .menu .left .cabeza-apartado,
 html .contenedor .menu .right .cabeza-apartado {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  background: rgb(0, 160, 255);
+  background: #339bff;
   text-align: center;
   padding: 10px;
   width: 100%;
@@ -135,7 +135,7 @@ html .top-rigth .user {
   display: flex;
   flex-direction: row;
   align-items: center;
-  background: rgb(0, 160, 255);
+  background: #339bff;
   border-radius: 5px;
   text-align: center;
   width: 70%;

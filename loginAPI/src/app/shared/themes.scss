@@ -1,0 +1,9 @@
+$colorWhite: #fff;
+$bgColor: #b700ff;
+$alterColor: lighten($bgColor, 10);
+$dkColor: darken($bgColor, 15);
+$logoBg: rgb(0, 42, 255);
+$blueBg:rgb(0, 132, 255);
+$purpleBg: rgb(24, 102, 0);
+$purpleBgDarken: darken($purpleBg, 10);
+$error: red;
