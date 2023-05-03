@@ -1,0 +1,12 @@
+
+.list{
+    display: flex;
+
+    .tag{
+        margin-right: 5px;
+        background: lightcoral;
+        border-radius: 3px;
+        padding: 3px 5px;
+        // width: fit-content;
+    }
+}

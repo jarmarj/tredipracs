@@ -22,10 +22,8 @@ export class AdminUserComponent implements OnInit {
   displayedColumns: string[] = ['email', 'name', 'id'];
   dataSource: any;
   length = 0;
-  pageIndex = 0;
   pageSizeOptions = [25, 50, 100];
-  pageSize = this.pageSizeOptions[0];
-  response = 'ok';
+  page: { limit: number, offset: number } = { limit: this.pageSizeOptions[0], offset: 0 };
   /**
    *
    */
@@ -33,34 +31,36 @@ export class AdminUserComponent implements OnInit {
     this.dataSource = new MatTableDataSource<User>();
 
   }
+  //keyup.enter
+  //evento para filtrado
 
   ngOnInit() {
     this.table()
   }
 
-  table(lengthOption = this.pageSize) {
+  table() {
 
-    let params = 'limit=' + lengthOption;
-    this.api.getUsers(params).subscribe(
-      // data => {
-      //   console.log(data.status);
-  
-        (data: { users: User[]; total_count: number }) => {
-          // (data) => {
+
+    this.api.getUsers(this.page).subscribe(
+      {
+        next:(data: { users: User[]; total_count: number }) => {
           this.length = data.total_count;
           this.dataSource = new MatTableDataSource<User>(data.users);
-            // this.dataSource.data = data.users.map((user) => {
-            // return user;
-            // })
-            console.log(this.dataSource);
-  
+        },
+        error:()=>{
+          console.log('logout');
+          this.router.navigate(['/login']);
+          
         }
-      // }
+      }
+      
     )
   }
 
   changePage(newPage: PageEvent): void {
-    this.pageSize = newPage.pageSize;
+    // this.pageSize = newPage.pageSize;
+    this.page = { limit: newPage.pageSize, offset: newPage.pageSize * newPage.pageIndex }
+    console.log(newPage);
     this.table();
   }
 }

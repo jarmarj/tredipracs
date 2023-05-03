@@ -3,11 +3,14 @@ import { LoginInterface } from '../../modelos/login.interface'
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, map, tap } from 'rxjs';
 import jwt_decode from 'jwt-decode';
+import { tokenSession } from './tokenSession';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
+
+  sessionToken = new tokenSession();
 
   constructor(private http: HttpClient) { }
 
@@ -24,7 +27,6 @@ export class ApiService {
       Authorization: `Basic ${stringCredenctials}`,
       'Content-Type': 'application/json',
     });
-    console.log(headers);
 
     return this.http.post(apiURL, null, {
       headers,
@@ -35,35 +37,29 @@ export class ApiService {
         *Tap para copiar la respuesta del post
         */
 
-        // tap({
-        //   next: (resp) => {
-        //     console.log(resp);
-        //     const token: string = resp.headers.get('authorization');
-        //     // console.log(token);
-        //     const tokenTemp = token.replace('Bearer ', '');
-        //     console.log(tokenTemp);
-        //     const info = jwt_decode(tokenTemp);
-        //     console.log(info);
+        tap({
+          next: (resp) => {
+            const token: string = resp.headers.get('authorization');
+            const tokenTemp = token.replace('Bearer ', '');
+            this.sessionToken.sessionToken = tokenTemp;
+            const info = jwt_decode(tokenTemp);
 
-        //   }
-        //   , error: (err) => {
-        //     console.log(err);
+          }
+          , error: (err) => {
+            console.log(err);
 
-        //   }
-        // }),
+          }
+        }),
 
         /*
         *Map devuelve solo el token ya decodificado
         */
         map((resp) => {
-          // console.log(resp);
           const token: string = resp.headers.get('authorization');
-          // console.log(token);
-          sessionStorage.setItem('auth_token', token);
+          // sessionStorage.setItem('auth_token', token);
 
           const tokenTemp = token.replace('Bearer ', '');
           const info = jwt_decode(tokenTemp);
-          console.log(info);
           return info;
         })
       );
@@ -75,34 +71,42 @@ export class ApiService {
   */
 
   getHeader() {
-    // console.log(sessionStorage.getItem('auth_token'));
 
-
+    console.log(this.sessionToken.getSessionToken);
+    
     return new HttpHeaders({
       // Authorization: 'soyunaprueba'
-      Authorization: sessionStorage.getItem('auth_token')
+      Authorization: 'Bearer ' + this.sessionToken.getSessionToken
     });
   }
 
-  getUsers(pagination: string) {
+  getUsers(page:{limit:number, offset:number}) {
     const apiUrl = 'https://desa-api.tredibus.com/users'
-      + '?'
-      + pagination;
+      + '?limit='
+      + page.limit
+      + '&offset='
+      + page.offset;
 
-    // console.log(apiUrl);
-
-
+    
     return this.http.get(
       apiUrl, {
       headers: this.getHeader(),
-      // observe: 'response'
+      observe: 'response'
     }
     )
-    .pipe(
-      tap((data) => {
-        console.log(data);
-      })
-    );
+      .pipe(
+        map(
+          (resp) => {
+            const token: string = resp.headers.get('authorization');
+            const tokenTemp = token.replace('Bearer ', '');
+            this.sessionToken.sessionToken = tokenTemp;
+            const info = jwt_decode(tokenTemp);
+            console.log(resp.body);
+            
+            return resp.body;
+          })
+      );
   }
 
+  
 }

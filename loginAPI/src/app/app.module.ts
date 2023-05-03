@@ -9,10 +9,11 @@ import { MaterialModule } from './shared/material.module';
 import { RouterModule, Routes } from '@angular/router';
 import { MonitorComponent } from './monitor/monitor.component';
 import { AdminUserComponent } from './admin-user/admin-user.component';
+import { AuthGuardService } from './servicios/api/guards/auth-guard.service';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: 'adminuser', component: AdminUserComponent }
+  { path: 'adminuser', component: AdminUserComponent, canActivate:[AuthGuardService] }
 ];
 
 @NgModule({
