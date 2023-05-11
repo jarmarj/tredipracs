@@ -10,6 +10,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { MonitorComponent } from './monitor/monitor.component';
 import { AdminUserComponent } from './admin-user/admin-user.component';
 import { AuthGuardService } from './servicios/api/guards/auth-guard.service';
+import { UsersComponent } from './admin-user/modals/users/users.component';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -21,7 +22,8 @@ const appRoutes: Routes = [
     AppComponent,
     LoginComponent,
     MonitorComponent,
-    AdminUserComponent
+    AdminUserComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
